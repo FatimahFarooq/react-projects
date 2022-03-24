@@ -41,7 +41,7 @@ const Tours = () => {
 
   if (isLoading) {
     return <h2>{isLoading && "Loading.."}</h2>;
-  } else if (isError) {
+  } else if (isError)s {
     return <h2>{isError && "Error.."}</h2>;
   } else {
     if (tours.length === 0) {
