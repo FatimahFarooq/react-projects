@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Tour = ({ tour, func }) => {
+  const [toggle, setToggle] = useState(true);
   const { id, image, info, name, price } = tour;
 
   return (
@@ -13,10 +14,10 @@ const Tour = ({ tour, func }) => {
             <h4 className="tour-price">{price}</h4>
           </div>
           <p>
-            {info}
-            <button>read more</button>
+            {toggle ? info.substring(0, 200) : info}
+            <button onClick={() => setToggle(!toggle)}>{toggle ? 'read more' : 'Show less'} </button>
           </p>
-          <button className="delete-btn" onClick={()=>func(id)}>
+          <button className="delete-btn" onClick={() => func(id)}>
             Not Interested
           </button>
         </footer>
