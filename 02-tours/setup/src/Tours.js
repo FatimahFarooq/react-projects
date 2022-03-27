@@ -41,7 +41,7 @@ const Tours = () => {
 
   if (isLoading) {
     return <h2>{isLoading && "Loading.."}</h2>;
-  } else if (isError)s {
+  } else if (isError) {
     return <h2>{isError && "Error.."}</h2>;
   } else {
     if (tours.length === 0) {
@@ -56,17 +56,19 @@ const Tours = () => {
         </>
       );
     } else {
-      return<>
-        <div className="title">
-          <h2>our tours</h2>
-          <div className="underline"></div>
-        </div>
-        <div>
-          {tours.map((tour) => {
-            return <Tour key={tour.id} tour={tour} func={removeTour}></Tour>;
-          })}
-        </div>
-      </>;
+      return (
+        <>
+          <div className="title">
+            <h2>our tours</h2>
+            <div className="underline"></div>
+          </div>
+          <div>
+            {tours.map((tour) => {
+              return <Tour key={tour.id} tour={tour} func={removeTour}></Tour>;
+            })}
+          </div>
+        </>
+      );
     }
   }
 };
