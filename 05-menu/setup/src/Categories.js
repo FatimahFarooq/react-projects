@@ -19,15 +19,15 @@ const Categories = ({ categories, filter }) => {
 
   return (
     <div className="btn-container">
-      {all_categories.map((item, index) => {
+      {all_categories.map((cat, index) => {
         return (
           <button
             type="button"
             className="filter-btn"
             key={index}
-            onClick={() => filter(item)}
+            onClick={() => filter(cat)}
           >
-            {item}
+            {cat}
           </button>
         );
       })}
